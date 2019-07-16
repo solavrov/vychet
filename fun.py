@@ -33,7 +33,12 @@ def print_powers(mod):
     t = get_powers(mod)
     print('\nPower table mod =', mod)
     for v in range(2, mod):
-        print('[' + str(v) + ']:', t[v], 'order=' + str(get_order(v, mod)))
+        order = get_order(v, mod)
+        if order == mod - 1:
+            sign = '*'
+        else:
+            sign = ''
+        print('[' + str(v) + ']:', t[v], 'order =', str(order), sign)
 
 
 def get_order(v, mod):
